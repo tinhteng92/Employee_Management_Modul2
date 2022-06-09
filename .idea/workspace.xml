@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6cb4e4c4-3474-4b1b-9501-7170e50a9f67" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Case_Study.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/SalaryCaculation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/activeUser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/admin.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/employee.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/salary.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/user.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/io/ReaderAndWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/ActiveUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Salary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/validate/ValidateAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/validate/ValidateEmployee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/AccountView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/EmployeeView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/ManagerView.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2A36jpyRoZH166TVYsq2vczE4oZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/FileGitClone/final"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\CodeGym\Hoc-lieu-Java\DemoCode\Modul-2\Case_Study\src\view" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.Main" />
+      <module name="Case_Study" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6cb4e4c4-3474-4b1b-9501-7170e50a9f67" name="Changes" comment="" />
+      <created>1654226062305</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654226062305</updated>
+      <workItem from="1654226064170" duration="2612000" />
+      <workItem from="1654241905390" duration="3193000" />
+      <workItem from="1654337659911" duration="81000" />
+      <workItem from="1654415330372" duration="3272000" />
+      <workItem from="1654443910423" duration="3721000" />
+      <workItem from="1654501820550" duration="5382000" />
+      <workItem from="1654562398177" duration="11802000" />
+      <workItem from="1654611923913" duration="1515000" />
+      <workItem from="1654672181042" duration="26741000" />
+      <workItem from="1654710785075" duration="1091000" />
+      <workItem from="1654735910394" duration="29410000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
