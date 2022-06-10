@@ -1,12 +1,13 @@
 package Main;
+import view.AccountView;
+import view.EmployeeView;
 import view.ManagerView;
 
 public class Main {
-
     public static void main(String[] args) {
-        ManagerView managerView = new ManagerView();
+        AccountView accountView = new AccountView();
         while (true){
-            ManagerView.menuForManager();
+            accountView.AccountMenu();
         }
     }
 }

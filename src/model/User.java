@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Set;
 
 public class User implements Serializable {
+    private int id;
     private String displayName;
     private String userName;
     private String password;
@@ -12,11 +13,20 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String displayName, String userName, String password, String role) {
+    public User(int id, String displayName, String userName, String password, String role) {
+        this.id = id;
         this.displayName = displayName;
         this.userName = userName;
         this.password = password;
         this.role = role;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getDisplayName() {
@@ -43,7 +53,7 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getrole() {
+    public String getRole() {
         return role;
     }
 

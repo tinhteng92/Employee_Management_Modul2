@@ -4,7 +4,7 @@ import service.EmployeeService;
 
 import java.util.Scanner;
 
-public class EmployeeManagement {
+public class EmployeeView {
     Scanner scanner = new Scanner(System.in);
     EmployeeService employeeService = new EmployeeService();
 
@@ -24,7 +24,8 @@ public class EmployeeManagement {
                 break;
             case 3:
                 ProfileView.logOut();
-                new Main();
+                //
+                new AccountView();
         }
     }
 

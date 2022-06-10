@@ -6,13 +6,14 @@ import java.util.Locale;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-import static view.AccountView.userList;
+import static service.UserService.userList;
 
 public class ValidateAccount {
     Scanner scanner = new Scanner(System.in);
 
+
     public String validateDisplayName() {
-        System.out.println("Enter your display name, no blank: ");
+        System.out.println("Enter your display name, blank is not allowed: ");
         while (true) {
             String displayName = scanner.nextLine();
             boolean checkDisplayName = Pattern.matches("(.|\\s)*\\S(.|\\s)*", displayName);

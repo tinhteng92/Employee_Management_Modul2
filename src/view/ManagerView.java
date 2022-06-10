@@ -1,10 +1,12 @@
 package view;
 
+import controller.UserController;
 import service.EmployeeService;
 import controller.SalaryCaculation;
 import io.ReaderAndWriter;
 import model.Employee;
 import model.Salary;
+import service.UserService;
 import validate.ValidateEmployee;
 
 import java.util.ArrayList;
@@ -19,6 +21,7 @@ public class ManagerView {
     static List<Employee> employeeList = new ArrayList<>();
     static SalaryCaculation salaryCaculation = new SalaryCaculation();
     static EmployeeService employeeService = new EmployeeService();
+    static UserController userController = new UserController();
 
    public ManagerView(){
        employeeList = readerAndWriter.readFromFile(PATH_EMPLOYEE);
@@ -38,41 +41,42 @@ public class ManagerView {
         System.out.println("10.SHOW USER LIST");
         System.out.println("11.LOG OUT");
         System.out.println("Please choose any options: ");
-        String choice = scanner.nextLine();
+        int choice = Integer.parseInt(scanner.nextLine());
         switch (choice) {
-            case "1":
+            case 1:
                 creatEmployee();
                 break;
-            case "2":
+            case 2:
                 search();
                 break;
-            case "3":
+            case 3:
                 checkStatus();
                 break;
-            case "4":
+            case 4:
                 editEmployee();
                 break;
-            case "5":
+            case 5:
                 changeStatus();
                 break;
-            case "6":
+            case 6:
                 deleteEmployee();
                 break;
-            case "7":
+            case 7:
                 showEmployeeList();
                 break;
-            case "8":
+            case 8:
                 showPayroll();
                 break;
-//            case "9":
-//                deleteAccount();
-//                break;
-//            case "10":
-//                showUserList();
-//                break;
-//            case "11":
-//                ProfileView.logOut();
-//                new Main();
+            case 9:
+                deleteAccount();
+                break;
+            case 10:
+                showUserList();
+                break;
+            case 11:
+                ProfileView.logOut();
+                //
+                new AccountView();
             default:
                 System.err.println("Please choose any option!");
                 menuForManager();
@@ -177,10 +181,14 @@ public class ManagerView {
         employeeService.updateStatus(id);
         backMenuForManager();
     }
-//    public static void deleteAccount(){
-//        System.out.println("Enter username you want to delete account: ");
-//        String userName = scanner.nextLine();
-//        userController.deleteAccount(userName);
-//        backMenuForManager();
-//    }
+    public static void deleteAccount(){
+        System.out.println("Enter username you want to delete account: ");
+        String userName = scanner.nextLine();
+        userController.deleteAccount(userName);
+        backMenuForManager();
+    }
+    public static void showUserList(){
+        System.out.println(UserService.userList);
+        backMenuForManager();
+    }
 }

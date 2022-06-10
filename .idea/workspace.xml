@@ -2,31 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cb4e4c4-3474-4b1b-9501-7170e50a9f67" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Case_Study.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/SalaryCaculation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/activeUser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/admin.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/employee.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/salary.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/user.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/io/ReaderAndWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/ActiveUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Salary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/EmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/validate/ValidateAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/validate/ValidateEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/AccountView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/EmployeeView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/ManagerView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/CurrentUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelAccount/SignIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modelAccount/SignUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/CurrentUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/LoginView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/ProfileView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/RegisterView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/activeUser" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/currentUser.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/admin.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ActiveUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/validate/ValidateAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/validate/ValidateAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/AccountView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AccountView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/EmployeeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/EmployeeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ManagerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ManagerView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +53,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/FileGitClone/final"
+    "last_opened_file_path": "C:/CodeGym/Hoc-lieu-Java/DemoCode/Modul-2/Case_Study",
+    "nodejs_package_manager_path": "npm"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -83,7 +78,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main.Main" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -105,7 +100,9 @@
       <workItem from="1654611923913" duration="1515000" />
       <workItem from="1654672181042" duration="26741000" />
       <workItem from="1654710785075" duration="1091000" />
-      <workItem from="1654735910394" duration="29410000" />
+      <workItem from="1654735910394" duration="30392000" />
+      <workItem from="1654784111897" duration="11135000" />
+      <workItem from="1654822568043" duration="2585000" />
     </task>
     <servers />
   </component>
