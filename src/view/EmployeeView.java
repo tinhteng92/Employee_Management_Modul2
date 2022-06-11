@@ -24,17 +24,16 @@ public class EmployeeView {
                 break;
             case 3:
                 ProfileView.logOut();
-                //
                 new AccountView();
         }
     }
 
     public void backMenuForStaff(){
         String backMenu = "";
-        while (!backMenu.equalsIgnoreCase("exit")){
-            System.out.println("ENTER \"EXIT\" TO COME BACK MENU: ");
+        while (!backMenu.equalsIgnoreCase("e")){
+            System.out.println("ENTER \"E\" TO COME BACK MENU: ");
             backMenu = scanner.nextLine();
-            if (backMenu.equalsIgnoreCase("exit")){
+            if (backMenu.equalsIgnoreCase("e")){
                 menuForStaff();
             }
         }
@@ -54,7 +53,11 @@ public class EmployeeView {
             case 1:
                 System.out.println("Enter employee's name you want to filter: ");
                 String name = scanner.nextLine();
-                System.out.println(employeeService.findByName(name));
+                if(employeeService.findByName(name).isEmpty()){
+                    System.out.println("Not found!");
+                }else {
+                    System.out.println(employeeService.findByName(name));
+                }
                 backMenuForStaff();
                 break;
             case 2:
@@ -69,7 +72,11 @@ public class EmployeeView {
                     System.out.println("Invalid!");
                     menuForStaff();
                 }
-                System.out.println(employeeService.filterByWorkingType(typeToSearch));
+                if (employeeService.filterByWorkingType(typeToSearch) == null){
+                    System.out.println("Not Found !");
+                }else {
+                    System.out.println(employeeService.filterByWorkingType(typeToSearch));
+                }
                 backMenuForStaff();
                 break;
             case 3:

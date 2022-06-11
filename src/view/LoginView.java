@@ -20,7 +20,7 @@ public class LoginView {
             new ProfileView();
         }else {
             System.err.println("Login failed! Please check your username or password.");
-            new LoginView();
+            new AccountView();
         }
     }
 }

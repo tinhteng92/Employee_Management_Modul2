@@ -90,40 +90,36 @@ public class Employee implements Serializable {
     @Override
     public String toString() {
         if (isStatus()) {
-            return "Staff{" +
-                    "id=" + id +
-                    ", name='" + name + '\'' +
-                    ", age=" + age +
-                    ", gender='" + gender + '\'' +
-                    ", status= Working" +
-                    ", workingType='" + workingType + '\'' +
-                    ", position='" + position + '\'' +
-                    "}\n";
+            return  " , id : "+ id
+                    +" , Name : "+ name
+                    +" , Age : "+ age
+                    +" , Gender : "+ gender
+                    +" , Status : Working"
+                    +" , Working Type : "+ workingType
+                    +" , Position : "+ position;
+
 
         } else {
-            return "Staff{" +
-                    "id=" + id +
-                    ", name='" + name + '\'' +
-                    ", age=" + age +
-                    ", gender='" + gender + '\'' +
-                    ", status= Retired" +
-                    ", workingType='" + workingType + '\'' +
-                    ", position='" + position + '\'' +
-                    "\n";
+            return " , id : "+ id
+                    +" , Name : "+ name
+                    +" , Age : "+ age
+                    +" , Gender : "+ gender
+                    +" , Status : Retired"
+                    +" , Working Type : "+ workingType
+                    +" , Position : "+ position;
         }
     }
 
     public String toStringStatus() {
         if (isStatus()){
-            return "Staff{" +
-                    " name='" + name + '\'' +
-                    ", status= Working" +
-                    "\n";
+            return " , Name : "+ name
+                    +" , Position : "+ position
+                    +" , Status : Working";
+//
         }else {
-            return "Staff{" +
-                    " name='" + name + '\'' +
-                    ", status= Retired" +
-                    "\n";
+            return " , Name : "+ name
+                    +" , Position : "+ position
+                    +" , Status : Retired";
         }
 
     }

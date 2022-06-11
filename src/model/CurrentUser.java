@@ -2,14 +2,14 @@ package model;
 
 public class CurrentUser {
     private int id;
-    private String name;
+    private String displayName;
     private String username;
     private String password;
     private String role;
 
-    public CurrentUser(int id, String name, String username, String password, String role) {
+    public CurrentUser(int id, String displayName, String username, String password, String role) {
         this.id = id;
-        this.name = name;
+        this.displayName = displayName;
         this.username = username;
         this.password = password;
         this.role = role;
@@ -23,12 +23,12 @@ public class CurrentUser {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getDisplayName() {
+        return displayName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
     public String getUsername() {

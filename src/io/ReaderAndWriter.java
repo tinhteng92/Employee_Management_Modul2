@@ -16,9 +16,9 @@ public class ReaderAndWriter<T>{
             objectInputStream.close();
             fis.close();
         } catch (FileNotFoundException e) {
-            System.out.println("Danh sách không tồn tại !");
+            System.out.println("File does not exit !");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("------");
         }
         return typeList;
     }
@@ -30,7 +30,7 @@ public class ReaderAndWriter<T>{
             objectOutputStream.writeObject(typeList);
             objectOutputStream.close();
         } catch (FileNotFoundException e) {
-            System.out.println("File chưa tồn tại !");
+            System.out.println("File does not exit !");
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

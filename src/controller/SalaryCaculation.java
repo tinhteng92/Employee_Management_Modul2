@@ -9,7 +9,7 @@ public class SalaryCaculation {
     public final static String PATH_SALARY = ReaderAndWriter.PATH + "salary.txt";
     public static List<Salary> salaryList = new ReaderAndWriter<Salary>().readFromFile(PATH_SALARY);
 
-    public List<Salary> writeSlaryToFile(){
+    public List<Salary> writeSalaryToFile(){
         new ReaderAndWriter<Salary>().writeToFile(PATH_SALARY, salaryList);
         return salaryList;
     }
@@ -19,7 +19,7 @@ public class SalaryCaculation {
     public static int calculateSalary(String position, String workingType){
         int baseSalary = 0;
         if(position.equalsIgnoreCase("staff")) {
-            if (workingType.equalsIgnoreCase("partime")) {
+            if (workingType.equalsIgnoreCase("partTime")) {
                 baseSalary = Salary.WORKING_HOURS_PARTTIME * Salary.PAY_PER_HOUR_STAFF * Salary.DEFAULT_WORKING_DAYS;
             } else {
                 baseSalary = Salary.WORKING_HOURS_FULLTIME * Salary.PAY_PER_HOUR_STAFF * Salary.DEFAULT_WORKING_DAYS;
@@ -30,11 +30,12 @@ public class SalaryCaculation {
         return baseSalary;
     }
 
+
     public void creatSalary(Salary salary){
         saveToList(salary);
-        writeSlaryToFile();
+        writeSalaryToFile();
     }
     public List<Salary> showPayroll(){
-        return writeSlaryToFile();
+        return writeSalaryToFile();
     }
 }

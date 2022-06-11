@@ -1,7 +1,5 @@
 package validate;
-
 import model.Employee;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -18,7 +16,7 @@ public class ValidateEmployee {
                 }
                 return id;
             } catch (Exception e) {
-                System.out.println("The id failed! Please enter again!");
+                System.out.println("Please enter number!");
             }
         }
     }
@@ -51,7 +49,7 @@ public class ValidateEmployee {
                 int age = Integer.parseInt(scanner.nextLine());
                 return age;
             }catch (Exception e){
-                System.out.println("Enter number!");
+                System.out.println("Please enter number!");
             }
         }
     }
@@ -64,11 +62,11 @@ public class ValidateEmployee {
                 System.out.println("0. " + name3);
                 System.out.println("Enter \"1\" to choose " + name2 + " \"0\" to choose " + name3 +"!");
                 int choice = Integer.parseInt(scanner.nextLine());
-                String gioiTinh;
+                String str;
                 if (choice == 1) {
-                    return gioiTinh = name2;
+                    return str = name2;
                 } else if (choice == 0) {
-                    return gioiTinh = name3;
+                    return str = name3;
                 }
             } catch (Exception e) {
                 System.out.println("Only enter \"1\" or \"0\" !");

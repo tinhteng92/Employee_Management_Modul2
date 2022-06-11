@@ -9,7 +9,7 @@ public class CurrentUserService {
     public static final String PATH_CURRENT_USER = ReaderAndWriter.PATH + "currentUser.txt";
     public static List<CurrentUser> currentUserList = new ReaderAndWriter<CurrentUser>().readFromFile(PATH_CURRENT_USER);
 
-    public List<CurrentUser> writeToFile(){
+    public static List<CurrentUser> writeToFile(){
         new ReaderAndWriter<CurrentUser>().writeToFile(PATH_CURRENT_USER, currentUserList);
         return currentUserList;
     }

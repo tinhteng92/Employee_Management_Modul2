@@ -1,6 +1,7 @@
 package view;
 
 import controller.UserController;
+import model.User;
 import service.EmployeeService;
 import controller.SalaryCaculation;
 import io.ReaderAndWriter;
@@ -17,17 +18,13 @@ public class ManagerView {
     public final static String PATH_EMPLOYEE = ReaderAndWriter.PATH + "employee.txt";
     static Scanner scanner = new Scanner(System.in);
     static ValidateEmployee validateEmployee = new ValidateEmployee();
-    ReaderAndWriter<Employee> readerAndWriter = new ReaderAndWriter();
-    static List<Employee> employeeList = new ArrayList<>();
+    static List<Employee> employeeList = new ReaderAndWriter<Employee>().readFromFile(PATH_EMPLOYEE);
     static SalaryCaculation salaryCaculation = new SalaryCaculation();
     static EmployeeService employeeService = new EmployeeService();
     static UserController userController = new UserController();
 
-   public ManagerView(){
-       employeeList = readerAndWriter.readFromFile(PATH_EMPLOYEE);
-   }
 
-    public static void menuForManager(){
+    public ManagerView(){
         System.out.println("==================== MENU FOR MANAGER ====================");
         System.out.println("1.CREATE EMPLOYEE");
         System.out.println("2.SEARCH INFORMATION OF EMPLOYEE");
@@ -75,20 +72,20 @@ public class ManagerView {
                 break;
             case 11:
                 ProfileView.logOut();
-                //
                 new AccountView();
+                break;
             default:
                 System.err.println("Please choose any option!");
-                menuForManager();
+                new ManagerView();
         }
     }
     private static void backMenuForManager() {
         String backMenu = "";
-        while (!backMenu.equalsIgnoreCase("quit")) {
-            System.out.println("ENTER \"EXIT\" TO COME BACK MENU: ");
+        while (!backMenu.equalsIgnoreCase("e")) {
+            System.out.println("ENTER \"E\" TO COME BACK MENU: ");
             backMenu = scanner.nextLine();
-            if (backMenu.equalsIgnoreCase("exit")) {
-                menuForManager();
+            if (backMenu.equalsIgnoreCase("e")) {
+                new ManagerView();
             }
         }
     }
@@ -110,6 +107,8 @@ public class ManagerView {
         System.out.println(salaryCaculation.showPayroll());
         backMenuForManager();
     }
+
+
     public static void showEmployeeList(){
         System.out.println(employeeService.writeEmpToFile());
         backMenuForManager();
@@ -160,7 +159,7 @@ public class ManagerView {
                     typeToSearch = "FullTime";
                 }else {
                     System.out.println("Invalid!");
-                    menuForManager();
+                    new ManagerView();
                 }
                 System.out.println(employeeService.filterByWorkingType(typeToSearch));
                 backMenuForManager();
@@ -188,7 +187,9 @@ public class ManagerView {
         backMenuForManager();
     }
     public static void showUserList(){
-        System.out.println(UserService.userList);
+        for(User user: UserService.userList){
+            System.out.println(user);
+        }
         backMenuForManager();
     }
 }

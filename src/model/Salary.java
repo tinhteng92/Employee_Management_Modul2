@@ -78,11 +78,11 @@ public class Salary implements Serializable {
 
     @Override
     public String toString() {
-        return "Salary{" +
-                " workingType='" + workingType + '\'' +
-                ", position='" + position + '\'' +
-                ", workingDays=" + workingDays +
-                ", salaryPerMonth=" + salaryPerMonth +
-                "\n";
+        return " , id : " + id
+                + " , Name : " + name
+                + " , Working type : " + workingType
+                + " , Position : " + position
+                + " , Working days : " + workingDays
+                + " , Salary per month : " + salaryPerMonth;
     }
 }

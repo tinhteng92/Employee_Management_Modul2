@@ -1,11 +1,7 @@
 package validate;
-
 import model.User;
-
-import java.util.Locale;
 import java.util.Scanner;
 import java.util.regex.Pattern;
-
 import static service.UserService.userList;
 
 public class ValidateAccount {
@@ -33,10 +29,10 @@ public class ValidateAccount {
         return false;
     }
     public String validateUserName(){
-        System.out.println("Enter your username which is required to lowercase letters or numbers, at least 6 characters, no whitespace: ");
+        System.out.println("Enter your username which is required to lowercase letters or numbers, at least 4 characters, no whitespace: ");
         while (true) {
             String userName = scanner.nextLine();
-            boolean checkUserName = Pattern.matches("[a-z0-9_-]{6,}", userName);
+            boolean checkUserName = Pattern.matches("[a-z0-9_]{4,}", userName);
             if (!checkUserName) {
                 System.err.println("Username failed! Please try again!");
                 continue;
@@ -48,10 +44,10 @@ public class ValidateAccount {
         }
     }
     public String validatePassword(){
-        System.out.println("Enter your password which is required at least 8 characters, contain at least one digit, one lowercase & uppercase letter, one special character and no whitespace:");
+        System.out.println("Enter your password which is required at least 4 characters, contain at least one digit, one lowercase & uppercase letter, one special character and no whitespace:");
         while (true) {
             String password = scanner.nextLine();
-            boolean checkPassword = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*=])(?=\\S+$).{8,}$", password);
+            boolean checkPassword = Pattern.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%&+^!*=])(?=\\S+$).{4,}$", password);
             if (!checkPassword) {
                 System.err.println("Password failed! Please try again!");
                 continue;
@@ -59,16 +55,23 @@ public class ValidateAccount {
             return password;
         }
     }
-    public String validateRole(){
-        System.out.println("Enter your role (staff/manager): ");
+    public String validateRole() {
         while (true) {
-            String role = scanner.nextLine();
-            boolean checkRole = Pattern.matches("staff|manager", role.toLowerCase(Locale.ROOT));
-            if (!checkRole) {
-                System.err.println("The role is not valid! Please try again!");
-                continue;
+            try {
+                System.out.println("Choose position: ");
+                System.out.println("1.STAFF ");
+                System.out.println("0. MANAGER ");
+                System.out.println("Enter \"1\" to choose STAFF" + " \"0\" to choose MANAGER !");
+                int choice = Integer.parseInt(scanner.nextLine());
+                String position;
+                if (choice == 1) {
+                    return position = "STAFF";
+                } else if (choice == 0) {
+                    return position = "MANAGER";
+                }
+            } catch (Exception e) {
+                System.out.println("Only enter \"1\" or \"0\" !");
             }
-            return role.toUpperCase();
         }
     }
 }

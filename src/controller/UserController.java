@@ -1,5 +1,4 @@
 package controller;
-
 import modelAccount.SignIn;
 import modelAccount.SignUp;
 import model.CurrentUser;
@@ -16,7 +15,7 @@ public class UserController {
         if (UserService.userList.size() == 0) {
             id = 1;
         } else {
-            id = UserService.userList.get(UserService.userList.size() - 1).getId() + 1;
+            id = (UserService.userList.get(UserService.userList.size() - 1).getId()) + 1;
         }
         User user = new User(id, signUp.getDisplayName(), signUp.getUsername(), signUp.getPassword(), signUp.getRole());
         userService.saveToList(user);

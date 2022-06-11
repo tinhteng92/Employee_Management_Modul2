@@ -1,12 +1,9 @@
 package service;
-
 import io.ReaderAndWriter;
 import model.Employee;
 import model.Salary;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static controller.SalaryCaculation.calculateSalary;
 import static controller.SalaryCaculation.salaryList;
 
@@ -89,11 +86,11 @@ public class EmployeeService {
     public List<Employee> findByName(String name){
         List<Employee> resultList = new ArrayList<>();
         for (int i = 0; i < employeeList.size(); i++) {
-            if (name.equalsIgnoreCase(salaryList.get(i).getName())){
+            if (name.equalsIgnoreCase(employeeList.get(i).getName())){
                 resultList.add(employeeList.get(i));
             }
         }
-        return employeeList;
+        return resultList;
     }
 
     public void updateStatus(int id){

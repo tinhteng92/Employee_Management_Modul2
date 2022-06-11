@@ -60,4 +60,15 @@ public class User implements Serializable {
     public void setStrRole(String strRole) {
         this.role = role;
     }
+
+    @Override
+    public String toString() {
+        return
+                " , id : " + id
+                + " , Display name : " + displayName
+                + " , UserName : " + userName
+                + " , Role : " + role;
+
+
+    }
 }
