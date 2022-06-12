@@ -2,92 +2,87 @@ package service;
 import io.ReaderAndWriter;
 import model.Employee;
 import model.Salary;
+
 import java.util.ArrayList;
 import java.util.List;
-import static controller.SalaryCaculation.calculateSalary;
-import static controller.SalaryCaculation.salaryList;
+import java.util.Locale;
+
+import static service.SalaryCalculation.*;
 
 public class EmployeeService {
     public final static String PATH_EMPLOYEE = ReaderAndWriter.PATH + "employee.txt";
-    ReaderAndWriter<Employee> readerAndWriter = new ReaderAndWriter();
-    public final static String PATH_SALARY = ReaderAndWriter.PATH + "salary.txt";
-    public static List<Employee> employeeList = new ArrayList<>();
-    {
-        employeeList = readerAndWriter.readFromFile(PATH_EMPLOYEE);
-    }
+    public static List<Employee> employeeList = new ReaderAndWriter<Employee>().readFromFile(PATH_EMPLOYEE);
 
-    public void creatEmployee(Employee employee) {
-        saveToList(employee);
-        writeEmpToFile();
 
-    }
-
-    public List<Employee> writeEmpToFile(){
-        readerAndWriter.writeToFile(PATH_EMPLOYEE, employeeList);
+    public List<Employee> writeEmpToFile() {
+        new ReaderAndWriter<Employee>().writeToFile(PATH_EMPLOYEE, employeeList);
         return employeeList;
     }
 
-    public void saveToList(Employee employee){
+    public void saveToList(Employee employee) {
         employeeList.add(employee);
     }
-    public void deleteById(int id){
+
+    public void deleteById(int id) {
         boolean check = false;
         for (int i = 0; i < employeeList.size(); i++) {
-            if(id == employeeList.get(i).getId()){
+            if (id == employeeList.get(i).getId()) {
                 employeeList.remove(i);
-                salaryList.remove(i);
-                readerAndWriter.writeToFile(PATH_EMPLOYEE, employeeList);
+                baseSalaryList.remove(i);
+                new ReaderAndWriter<Employee>().writeToFile(PATH_EMPLOYEE, employeeList);
                 System.out.println("Delete successful");
                 check = true;
                 break;
             }
         }
-        if (!check){
+        if (!check) {
             System.out.println("Not found!");
         }
     }
-    public void checkStatusByName(String name){
+
+    public void checkStatusByName(String name) {
         List<Employee> resultList = new ArrayList<>();
         boolean check = false;
-        for (int i = 0; i < employeeList.size(); i++) {
-            if (name.equalsIgnoreCase(employeeList.get(i).getName())){
-                Employee employee = new Employee(name, employeeList.get(i).isStatus());
-                resultList.add(employee);
+        for (Employee emp: employeeList) {
+            if (emp.getName().toLowerCase(Locale.ROOT).contains(name.toLowerCase(Locale.ROOT))) {
+                resultList.add(emp);
                 check = true;
             }
         }
-        if (!check){
+        if (!check) {
             System.out.println("Not found");
         }
-        for(Employee emp: resultList){
+        for (Employee emp : resultList) {
             System.out.println(emp.toStringStatus());
         }
     }
-    public void editEmployee(int id, String newName, int age,String gender, String newWorkingType){
+
+    public void editEmployee(int id, String newName, int age, String gender, String newWorkingType, String position) {
         for (int i = 0; i < employeeList.size(); i++) {
-            if(id == employeeList.get(i).getId()){
-                if(employeeList.get(i).getPosition().equalsIgnoreCase("staff")){
-                    employeeList.get(i).setName(newName);
-                    employeeList.get(i).setWorkingType(newWorkingType);
-                    employeeList.get(i).setAge(age);
-                    employeeList.get(i).setGender(gender);
-                    salaryList.get(i).setName(newName);
-                    salaryList.get(i).setWorkingType(newWorkingType);
-                    salaryList.get(i).setSalaryPerMonth(calculateSalary(salaryList.get(i).getPosition(), salaryList.get(i).getWorkingType()));
-                }else {
-                    employeeList.get(i).setName(newName);
-                    salaryList.get(i).setName(newName);
-                }
-                new ReaderAndWriter<Salary>().writeToFile(PATH_SALARY,salaryList);
+            if (id == employeeList.get(i).getId()) {
+                employeeList.get(i).setName(newName);
+                employeeList.get(i).setWorkingType(newWorkingType);
+                employeeList.get(i).setAge(age);
+                employeeList.get(i).setGender(gender);
+                employeeList.get(i).setPosition(position);
+
+
+                baseSalaryList.get(i).setName(newName);
+                baseSalaryList.get(i).setWorkingType(newWorkingType);
+                baseSalaryList.get(i).setPosition(position);
+                baseSalaryList.get(i).setSalaryPerMonth(calculateBaseSalary(baseSalaryList.get(i).getPosition(), baseSalaryList.get(i).getWorkingType()));
+
             }
         }
-    }
+}
+
+
 
     public List<Employee> findByName(String name){
         List<Employee> resultList = new ArrayList<>();
-        for (int i = 0; i < employeeList.size(); i++) {
-            if (name.equalsIgnoreCase(employeeList.get(i).getName())){
-                resultList.add(employeeList.get(i));
+        for (Employee emp: employeeList) {
+            if (emp.getName().toLowerCase(Locale.ROOT).contains(name.toLowerCase(Locale.ROOT))){
+                resultList.add(emp);
             }
         }
         return resultList;
@@ -95,10 +90,10 @@ public class EmployeeService {
 
     public void updateStatus(int id){
         boolean check = false;
-        for (int i = 0; i < employeeList.size(); i++) {
-            if(id == employeeList.get(i).getId()){
-                employeeList.get(i).setStatus(!employeeList.get(i).isStatus());
-                System.out.println("Update status for staff ID " + employeeList.get(i).getId() + " successful!");
+        for (Employee emp: employeeList) {
+            if(id == emp.getId()){
+                emp.setStatus(!emp.isStatus());
+                System.out.println("Update status for staff ID " + emp.getId() + " successful!");
                 check = true;
             }
         }
@@ -109,20 +104,31 @@ public class EmployeeService {
 
     public List<Employee> filterByStatus(boolean status){
         List<Employee> resultList = new ArrayList<>();
-        for (int i = 0; i < employeeList.size(); i++) {
-            if(status == employeeList.get(i).isStatus()){
-                resultList.add(employeeList.get(i));
+        for (Employee emp: employeeList) {
+            if(status == emp.isStatus()){
+                resultList.add(emp);
             }
         }
         return resultList;
     }
     public List<Employee> filterByWorkingType(String workingType){
         List<Employee> resultList = new ArrayList<>();
-        for (int i = 0; i < employeeList.size(); i++) {
-            if(workingType.equalsIgnoreCase(employeeList.get(i).getWorkingType())){
-                resultList.add(employeeList.get(i));
+        for (Employee emp: employeeList) {
+            if(workingType.equalsIgnoreCase(emp.getWorkingType())){
+                resultList.add(emp);
             }
         }
         return resultList;
     }
+    public Employee findByID(int id){
+        Employee employee = null;
+        for (Employee emp: employeeList){
+            if(id == emp.getId()){
+                employee = emp;
+                return employee ;
+            }
+        }
+        return employee;
+    }
+
 }

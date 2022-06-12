@@ -59,18 +59,21 @@ public class ValidateAccount {
         while (true) {
             try {
                 System.out.println("Choose position: ");
-                System.out.println("1.STAFF ");
-                System.out.println("0. MANAGER ");
-                System.out.println("Enter \"1\" to choose STAFF" + " \"0\" to choose MANAGER !");
+                System.out.println("0. STAFF  ");
+                System.out.println("1. ACCOUNTANT ");
+                System.out.println("2. MANAGER");
+                System.out.println("Enter \"0\" to choose STAFF, \"1\" to choose ACCOUNTANT or \"2\" to choose MANAGER !");
                 int choice = Integer.parseInt(scanner.nextLine());
-                String position;
-                if (choice == 1) {
-                    return position = "STAFF";
-                } else if (choice == 0) {
-                    return position = "MANAGER";
+              //  String role;
+                if (choice == 0) {
+                    return  "STAFF";
+                } else if (choice == 1) {
+                    return "ACCOUNTANT";
+                }else if (choice == 2){
+                    return  "MANAGER";
                 }
             } catch (Exception e) {
-                System.out.println("Only enter \"1\" or \"0\" !");
+                System.out.println("Only enter \"0\" or \"1\" or \"2\" !");
             }
         }
     }

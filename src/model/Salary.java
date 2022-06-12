@@ -6,7 +6,8 @@ public class Salary implements Serializable {
     public static final int WORKING_HOURS_PARTTIME = 4;
     public static final int WORKING_HOURS_FULLTIME = 8;
     public static final int PAY_PER_HOUR_STAFF = 5000;
-    public static final int PAY_PER_HOUR_MANAGER = 10000;
+    public static final int PAY_PER_HOUR_ACCOUNTANT = 9500;
+    public static final int PAY_PER_HOUR_MANAGER = 20000;
     public static final int DEFAULT_WORKING_DAYS = 22;
 
     private int id;
@@ -78,11 +79,13 @@ public class Salary implements Serializable {
 
     @Override
     public String toString() {
-        return " , id : " + id
+        return
+                " Id : " + id
                 + " , Name : " + name
                 + " , Working type : " + workingType
                 + " , Position : " + position
                 + " , Working days : " + workingDays
-                + " , Salary per month : " + salaryPerMonth;
+                + " , Salary per month : " + salaryPerMonth
+                        + "\n" ;
     }
 }

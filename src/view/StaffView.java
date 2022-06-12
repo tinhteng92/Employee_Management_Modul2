@@ -1,19 +1,25 @@
 package view;
 
+import Main.Main;
 import service.EmployeeService;
 
 import java.util.Scanner;
 
-public class EmployeeView {
+public class StaffView {
+    private final String MENU_FOR_STAFF =
+            "____________________________________"
+                    + "\n|------MENU FOR STAFF------|"
+                    + "\n|Please choose any options to continue!"
+                    + "\n"
+                    + "\n|1. SEARCH EMPLOYEE'S INFORMATION"
+                    + "\n|2. SHOW LIST OF EMPLOYEE"
+                    + "\n|3. LOG OUT"
+                    + "\n Choose option:";
     Scanner scanner = new Scanner(System.in);
     EmployeeService employeeService = new EmployeeService();
 
-    public void menuForStaff(){
-        System.out.println("==================== MENU FOR STAFF ====================");
-        System.out.println("Please choose any options: ");
-        System.out.println("1.SEARCH EMPLOYEE'S INFORMATION");
-        System.out.println("2.SHOW LIST OF EMPLOYEE");
-        System.out.println("3.LOG OUT");
+    public StaffView(){
+        System.out.println(MENU_FOR_STAFF);
         int choice = Integer.parseInt(scanner.nextLine());
         switch (choice) {
             case 1:
@@ -23,24 +29,14 @@ public class EmployeeView {
                 showListEmployee();
                 break;
             case 3:
-                ProfileView.logOut();
-                new AccountView();
+                new Main();
+                break;
         }
     }
 
-    public void backMenuForStaff(){
-        String backMenu = "";
-        while (!backMenu.equalsIgnoreCase("e")){
-            System.out.println("ENTER \"E\" TO COME BACK MENU: ");
-            backMenu = scanner.nextLine();
-            if (backMenu.equalsIgnoreCase("e")){
-                menuForStaff();
-            }
-        }
-    }
     public void showListEmployee(){
         System.out.println(employeeService.writeEmpToFile());
-        backMenuForStaff();
+        new StaffView();
     }
     public void search() {
         System.out.println("==================== SEARCH BY ====================");
@@ -58,7 +54,7 @@ public class EmployeeView {
                 }else {
                     System.out.println(employeeService.findByName(name));
                 }
-                backMenuForStaff();
+                new StaffView();
                 break;
             case 2:
                 System.out.println("Enter employee's working type you want to filter (PT - partTime/FT - fullTime): ");
@@ -70,21 +66,22 @@ public class EmployeeView {
                     typeToSearch = "FullTime";
                 }else {
                     System.out.println("Invalid!");
-                    menuForStaff();
+                    new StaffView();
                 }
                 if (employeeService.filterByWorkingType(typeToSearch) == null){
                     System.out.println("Not Found !");
                 }else {
                     System.out.println(employeeService.filterByWorkingType(typeToSearch));
                 }
-                backMenuForStaff();
+                new StaffView();
+
                 break;
             case 3:
                 System.out.println("Enter employee's working status you want to filter(true - working/false - retired): ");
                 boolean status = scanner.nextBoolean();
                 scanner.nextLine();
                 System.out.println(employeeService.filterByStatus(status));
-                backMenuForStaff();
+                new StaffView();
                 break;
         }
     }

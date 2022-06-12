@@ -64,10 +64,12 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return
-                " , id : " + id
-                + " , Display name : " + displayName
-                + " , UserName : " + userName
-                + " , Role : " + role;
+                " Id: " + id
+                + " , Display name: " + displayName
+                + " , UserName: " + userName
+                + " , Password: " + password
+                + " , Role: " + role
+                        + "\n" ;
 
 
     }

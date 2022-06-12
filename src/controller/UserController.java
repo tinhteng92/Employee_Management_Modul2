@@ -1,14 +1,11 @@
 package controller;
 import modelAccount.SignIn;
 import modelAccount.SignUp;
-import model.CurrentUser;
 import model.User;
-import service.CurrentUserService;
 import service.UserService;
 
 public class UserController {
     UserService userService = new UserService();
-    CurrentUserService currentUserService = new CurrentUserService();
 
     public void register(SignUp signUp){
         int id;
@@ -21,17 +18,15 @@ public class UserController {
         userService.saveToList(user);
         userService.writeToFile();
     }
-    public boolean login(SignIn signIn) {
+    public String login(SignIn signIn) {
+        String position = null;
         if (userService.checkLogin(signIn.getUsername(), signIn.getPassword())) {
             User user = userService.searchByUserName(signIn.getUsername());
-            CurrentUser currentUser = new CurrentUser(user.getId(), user.getDisplayName(), user.getUserName(), user.getPassword(), user.getRole());
-            currentUserService.saveToList(currentUser);
-            currentUserService.writeToFile();
-            return true;
-        } else {
-            return false;
+            position = user.getRole();
         }
+        return position;
     }
+
     public void deleteAccount(String username){
         userService.deleteByUserName(username);
     }

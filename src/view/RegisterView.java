@@ -3,7 +3,7 @@ package view;
 import modelAccount.SignUp;
 import controller.UserController;
 import validate.ValidateAccount;
-
+import Main.Main;
 import java.util.Scanner;
 
 public class RegisterView {
@@ -22,6 +22,6 @@ public class RegisterView {
         userController.register(signUp);
         System.out.println("Press Enter back to Menu: ");
         scanner.nextLine();
-        new AccountView();
+        new Main();
     }
 }

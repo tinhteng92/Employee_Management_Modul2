@@ -1,5 +1,6 @@
 package view;
 
+import Main.Main;
 import modelAccount.SignIn;
 import controller.UserController;
 
@@ -16,11 +17,23 @@ public class LoginView {
         System.out.println("Enter your password: ");
         String password = scanner.nextLine();
         SignIn signIn = new SignIn(username,password);
-        if (userController.login(signIn)){
-            new ProfileView();
-        }else {
-            System.err.println("Login failed! Please check your username or password.");
-            new AccountView();
+        String role=(userController.login(signIn));
+        try {
+            if (role.equalsIgnoreCase("manager")) {
+                System.out.println("Welcome User: " + username);
+                new ManagerView();
+            } else if (role.equalsIgnoreCase("staff")) {
+                System.out.println("Welcome User: " + username);
+                new StaffView();
+            } else if (role.equalsIgnoreCase("accountant")) {
+                System.out.println("Welcome User: " + username);
+                new AccountantView();
+            } else {
+                throw new Exception();
+            }
+        }catch (Exception e){
+           System.err.println("Login failed! Please check your username or password.");
+            new Main();
         }
     }
 }

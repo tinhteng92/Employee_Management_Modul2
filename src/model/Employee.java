@@ -90,36 +90,44 @@ public class Employee implements Serializable {
     @Override
     public String toString() {
         if (isStatus()) {
-            return  " , id : "+ id
+            return
+                    " Id : "+ id
                     +" , Name : "+ name
                     +" , Age : "+ age
                     +" , Gender : "+ gender
                     +" , Status : Working"
                     +" , Working Type : "+ workingType
-                    +" , Position : "+ position;
+                    +" , Position : "+ position
+                    + "\n" ;
 
 
         } else {
-            return " , id : "+ id
+            return
+                    " Id : "+ id
                     +" , Name : "+ name
                     +" , Age : "+ age
                     +" , Gender : "+ gender
                     +" , Status : Retired"
                     +" , Working Type : "+ workingType
-                    +" , Position : "+ position;
+                    +" , Position : "+ position
+                    + "\n" ;
         }
     }
 
     public String toStringStatus() {
         if (isStatus()){
-            return " , Name : "+ name
-                    +" , Position : "+ position
-                    +" , Status : Working";
+            return
+                    " Name: "+ name
+                    +" , Position: "+ position
+                    +" , Status: Working"
+                            + "\n" ;
 //
         }else {
-            return " , Name : "+ name
-                    +" , Position : "+ position
-                    +" , Status : Retired";
+            return
+                    " Name: "+ name
+                    +" , Position: "+ position
+                    +" , Status: Retired"
+                            + "\n" ;
         }
 
     }
